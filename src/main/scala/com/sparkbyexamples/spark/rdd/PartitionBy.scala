@@ -16,7 +16,7 @@ object PartitionBy {
 
     val sc = spark.sparkContext
 
-    val rdd = sc.textFile("C://000_Projects/opt/BigData/zipcodes.csv")
+    val rdd = sc.textFile("D:/github/GitHub/spark-scala-examples/src/main/resources/zipcodes.csv")
 
     val rdd2:RDD[Array[String]] = rdd.map(m=>m.split(","))
 
@@ -25,7 +25,7 @@ object PartitionBy {
 
     val rdd4 = rdd3.partitionBy(new HashPartitioner(3))
 
-    rdd4.saveAsTextFile("c:/tmp/output/partition")
+    rdd4.saveAsTextFile("D:/github/GitHub/spark-scala-examples/src/main/resources/partition")
 
 
   }
