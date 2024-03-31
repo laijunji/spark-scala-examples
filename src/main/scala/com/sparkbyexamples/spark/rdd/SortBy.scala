@@ -15,7 +15,7 @@ object SortBy {
 
     val sc = spark.sparkContext
 
-    val rdd:RDD[String] = sc.textFile("C://000_Projects/opt/BigData/zipcodes-noheader.csv")
+    val rdd:RDD[String] = sc.textFile("D:/github/GitHub/spark-scala-examples/src/main/resources/zipcodes-noheader.csv")
 
     val rddZip:RDD[ZipCode] = rdd.map(f=>{
       val arr = split(f)

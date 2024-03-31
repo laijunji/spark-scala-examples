@@ -10,13 +10,16 @@ object RDDPrint extends App{
     .getOrCreate()
   val dept = List(("Finance",10),("Marketing",20),
       ("Sales",30), ("IT",40))
+
   val rdd=spark.sparkContext.parallelize(dept)
   println(rdd)
-  val dataColl=rdd.collect()
-  println(dataColl)
-  dataColl.foreach(println)
 
-  dataColl.foreach(f=>println(f._1 +","+f._2))
+  val dataColl=rdd.collect()
+  //println(dataColl)
+
+  dataColl.foreach(println)
+  //dataColl.foreach(f=>println(f._1 +","+f._2))
+
   val dataCollLis=rdd.collectAsMap()
   dataCollLis.foreach(f=>println(f._1 +","+f._2))
 
